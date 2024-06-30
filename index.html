@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> INFINITY IMAGE GALLERY</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="item" style="--img:url(./img/1.jpg);" data-text="Iron Man"></div>
+        <div class="item" style="--img:url(./img/2.jpg);" data-text="Captain America"></div>
+        <div class="item" style="--img:url(./img/3.jpg);" data-text="Thor"></div>
+        <div class="item" style="--img:url(./img/4.jpg);" data-text="Marvels-1"></div>
+        <div class="item" style="--img:url(./img/5.jpg);" data-text="Marvels-2"></div>
+        <div class="item" style="--img:url(./img/6.jpg);" data-text="Avengers"></div>
+        <div class="item" style="--img:url(./img/7.jpg);" data-text="Hulk"></div>
+        <div class="item" style="--img:url(./img/1.jpg);" data-text="Iron Man"></div>
+        <div class="item" style="--img:url(./img/2.jpg);" data-text="Captain America"></div>
+        <div class="item" style="--img:url(./img/3.jpg);" data-text="Thor"></div>
+        <div class="item" style="--img:url(./img/4.jpg);" data-text="Marvels-1"></div>
+        <div class="item" style="--img:url(./img/5.jpg);" data-text="Marvels-2"></div>
+        <div class="item" style="--img:url(./img/6.jpg);" data-text="Avengers"></div>
+        <div class="item" style="--img:url(./img/7.jpg);" data-text="Hulk"></div>
+    </div>
+
+    <script>
+        let box = document.querySelector('.box');
+        function moveNext() {
+            let items = document.querySelectorAll('.item')
+            box.appendChild(items[0]);
+
+        }
+        function movePrev() {
+            let items = document.querySelectorAll('.item')
+            box.prepend(items[items.length - 1]);
+
+        }
+        window.addEventListener('wheel', function (event) {
+            if (event.deltaY > 0) {
+                moveNext();
+
+            } else {
+                movePrev()
+            }
+        })
+    </script>
+</body>
+
+</html>
